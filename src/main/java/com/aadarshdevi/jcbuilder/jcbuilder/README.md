@@ -1,7 +1,8 @@
 # JComponentBuilder
 
 An application for UI/UX Designers and Java Devs to ease the creation of
-JavaFX and Swing components visually.
+JavaFX and Swing components visually allowing them to focus on creating their
+programs without needing to get stuck on UI/UX designing in CSS or Java.
 
 ## Dev Feature List
 

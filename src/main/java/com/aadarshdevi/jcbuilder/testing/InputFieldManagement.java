@@ -68,6 +68,7 @@ public class InputFieldManagement extends GridPane {
         label.setPrefWidth(getPrefWidth() * 3 / 5);
         label.setPrefHeight(NODE_HEIGHT);
         label.setMaxWidth(Double.MAX_VALUE);
+        label.setMinWidth(getPrefWidth() * 2 / 5);
         setHgrow(label, Priority.ALWAYS);
         return label;
     }

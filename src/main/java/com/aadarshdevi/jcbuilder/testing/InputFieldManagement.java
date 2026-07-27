@@ -39,7 +39,7 @@ public class InputFieldManagement extends GridPane {
 
     private TextField getTextProperty(StringProperty text) {
         TextField textField = new TextField();
-        textField.setPrefHeight(NODE_HEIGHT);
+        setSize(textField);
         textField.setPrefWidth(getPrefWidth() * 2 / 5);
         textField.textProperty().bindBidirectional(text);
 //        textField.setBackground(new Background(new BackgroundFill(

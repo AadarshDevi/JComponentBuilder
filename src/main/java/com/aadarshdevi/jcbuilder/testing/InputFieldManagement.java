@@ -18,11 +18,12 @@ public class InputFieldManagement extends GridPane {
     private static final double NODE_HEIGHT = 30;
 
     public InputFieldManagement() {
-//        setBackground(new Background(new BackgroundFill(
-//                Paint.valueOf("#6ea0dd"),
-//                new CornerRadii(0),
-//                new Insets(5)
-//        )));
+        setBackground(new Background(new BackgroundFill(
+                Paint.valueOf("#ddb56e"),
+                new CornerRadii(0),
+                new Insets(0)
+        )));
+        setVgap(5);
         prefWidth(Double.MAX_VALUE);
         setAlignment(Pos.CENTER_LEFT);
         setPadding(new Insets(10));

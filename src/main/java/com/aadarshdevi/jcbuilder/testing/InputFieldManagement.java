@@ -79,9 +79,7 @@ public class InputFieldManagement extends GridPane {
         gridPane.setPrefWidth(getPrefWidth() * 2 / 5);
         setSize(gridPane);
 
-        Spinner<Double> widthSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, widthProperty.getValue(), 1);
-        setSize(widthSpinner);
-        widthSpinner.setEditable(true);
+        Spinner<Double> widthSpinner = getSpinner(widthProperty.getValue());
         widthProperty.bind(
                 Bindings.createDoubleBinding(
                         widthSpinner::getValue,
@@ -90,10 +88,7 @@ public class InputFieldManagement extends GridPane {
         );
         gridPane.add(widthSpinner, 0, 0);
 
-        Spinner<Double> heightSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, heightProperty.getValue(), 1);
-        setSize(heightSpinner);
-        heightSpinner.getValueFactory().setValue(heightProperty.getValue());
-        heightSpinner.setEditable(true);
+        Spinner<Double> heightSpinner = getSpinner(heightProperty.getValue());
         heightProperty.bind(
                 Bindings.createDoubleBinding(
                         heightSpinner::getValue,
@@ -102,5 +97,12 @@ public class InputFieldManagement extends GridPane {
         );
         gridPane.add(heightSpinner, 1, 0);
         return gridPane;
+    }
+
+    private Spinner<Double> getSpinner(double initialVal) {
+        Spinner<Double> spinner = new Spinner<>(Double.MIN_VALUE, Double.MAX_VALUE, initialVal, 1);
+        setSize(spinner);
+        spinner.setEditable(true);
+        return spinner;
     }
 }

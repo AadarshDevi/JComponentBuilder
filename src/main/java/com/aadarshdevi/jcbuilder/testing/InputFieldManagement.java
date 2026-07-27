@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 
-public class InputFieldManagement extends GridPane {
+public class InputFieldManagement extends GridPane implements InputManager {
 
     private static final double NODE_HEIGHT = 30;
 
@@ -31,6 +31,7 @@ public class InputFieldManagement extends GridPane {
         setMinSize(getPrefWidth(), getPrefHeight());
     }
 
+    @Override
     public void setSize(Region region) {
         setHgrow(region, Priority.NEVER);
         setVgrow(region, Priority.NEVER);
@@ -38,7 +39,8 @@ public class InputFieldManagement extends GridPane {
         region.setMinSize(region.getPrefWidth(), region.getPrefHeight());
     }
 
-    private TextField getTextProperty(StringProperty text) {
+    @Override
+    public TextField getTextProperty(StringProperty text) {
         TextField textField = new TextField();
         setSize(textField);
         textField.setPrefWidth(getPrefWidth() * 2 / 5);
@@ -46,7 +48,9 @@ public class InputFieldManagement extends GridPane {
         return textField;
     }
 
+    @Override
     public void setNode(Node node) {
+        getChildren().removeAll(getChildren());
 
         switch (node) {
             case Button button -> {
@@ -62,7 +66,8 @@ public class InputFieldManagement extends GridPane {
         }
     }
 
-    private Label getLabel(String header) {
+    @Override
+    public Label getLabel(String header) {
         Label label = new Label(header);
         label.setText(header);
         label.setPrefWidth(getPrefWidth() * 3 / 5);
@@ -73,6 +78,7 @@ public class InputFieldManagement extends GridPane {
         return label;
     }
 
+    @Override
     public GridPane getSizeSpinner(DoubleProperty widthProperty, DoubleProperty heightProperty) {
         GridPane gridPane = new GridPane(0, 0);
         gridPane.setHgap(5);
@@ -99,7 +105,8 @@ public class InputFieldManagement extends GridPane {
         return gridPane;
     }
 
-    private Spinner<Double> getSpinner(double initialVal) {
+    @Override
+    public Spinner<Double> getSpinner(double initialVal) {
         Spinner<Double> spinner = new Spinner<>(Double.MIN_VALUE, Double.MAX_VALUE, initialVal, 1);
         setSize(spinner);
         spinner.setEditable(true);

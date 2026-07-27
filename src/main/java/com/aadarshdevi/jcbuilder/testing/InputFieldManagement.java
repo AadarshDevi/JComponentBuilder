@@ -27,6 +27,7 @@ public class InputFieldManagement extends GridPane {
         prefWidth(Double.MAX_VALUE);
         setAlignment(Pos.CENTER_LEFT);
         setPadding(new Insets(10));
+        setMaxWidth(Double.MAX_VALUE);
     }
 
     private TextField getTextProperty(StringProperty text) {

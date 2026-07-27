@@ -29,7 +29,7 @@ public class InputFieldManagement extends GridPane {
         setPadding(new Insets(10));
         setMaxWidth(Double.MAX_VALUE);
     }
-    
+
     public void setSize(Region region) {
         setHgrow(region, Priority.NEVER);
         setVgrow(region, Priority.NEVER);
@@ -71,11 +71,8 @@ public class InputFieldManagement extends GridPane {
         label.setText(header);
         label.setPrefWidth(getPrefWidth() * 3 / 5);
         label.setPrefHeight(NODE_HEIGHT);
-//        label.setBackground(new Background(new BackgroundFill(
-//                Paint.valueOf("#81dd6e"),
-//                new CornerRadii(0),
-//                new Insets(0)
-//        )));
+        label.setMaxWidth(Double.MAX_VALUE);
+        setHgrow(label, Priority.ALWAYS);
         return label;
     }
 
@@ -106,7 +103,6 @@ public class InputFieldManagement extends GridPane {
                 )
         );
         gridPane.add(heightSpinner, 1, 0);
-
         return gridPane;
     }
 }

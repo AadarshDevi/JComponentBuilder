@@ -75,6 +75,7 @@ public class InputFieldManagement extends GridPane {
 
     public GridPane getSizeSpinner(DoubleProperty widthProperty, DoubleProperty heightProperty) {
         GridPane gridPane = new GridPane(0, 0);
+        gridPane.setHgap(5);
         gridPane.setPrefWidth(getPrefWidth() * 2 / 5);
         setSize(gridPane);
 

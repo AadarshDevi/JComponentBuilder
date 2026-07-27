@@ -95,9 +95,9 @@ public class InputFieldManagement extends GridPane {
         );
         gridPane.add(widthSpinner, 0, 0);
 
-        heightSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, heightProperty.getValue(), 1);
+        Spinner<Double> heightSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, heightProperty.getValue(), 1);
+        setSize(heightSpinner);
         heightSpinner.getValueFactory().setValue(heightProperty.getValue());
-        heightSpinner.setPrefHeight(NODE_HEIGHT);
         heightSpinner.setEditable(true);
         heightProperty.bind(
                 Bindings.createDoubleBinding(

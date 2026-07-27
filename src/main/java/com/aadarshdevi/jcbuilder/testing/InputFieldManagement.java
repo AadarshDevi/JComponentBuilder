@@ -16,7 +16,6 @@ import javafx.scene.paint.Paint;
 public class InputFieldManagement extends GridPane {
 
     private static final double NODE_HEIGHT = 30;
-    private Node node;
 
     public InputFieldManagement() {
 //        setBackground(new Background(new BackgroundFill(

@@ -1,4 +1,4 @@
-package com.aadarshdevi.jcbuilder.testing.input;
+package com.aadarshdevi.jcbuilder.testing;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;

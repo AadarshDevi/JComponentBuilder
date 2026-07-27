@@ -28,6 +28,7 @@ public class InputFieldManagement extends GridPane {
         setAlignment(Pos.CENTER_LEFT);
         setPadding(new Insets(10));
         setMaxWidth(Double.MAX_VALUE);
+        setMinSize(getPrefWidth(), getPrefHeight());
     }
 
     public void setSize(Region region) {

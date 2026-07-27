@@ -42,11 +42,6 @@ public class InputFieldManagement extends GridPane {
         setSize(textField);
         textField.setPrefWidth(getPrefWidth() * 2 / 5);
         textField.textProperty().bindBidirectional(text);
-//        textField.setBackground(new Background(new BackgroundFill(
-//                Paint.valueOf("#ddb56e"),
-//                new CornerRadii(0),
-//                new Insets(0)
-//        )));
         return textField;
     }
 

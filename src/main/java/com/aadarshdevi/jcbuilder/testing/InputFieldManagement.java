@@ -29,6 +29,13 @@ public class InputFieldManagement extends GridPane {
         setPadding(new Insets(10));
         setMaxWidth(Double.MAX_VALUE);
     }
+    
+    public void setSize(Region region) {
+        setHgrow(region, Priority.NEVER);
+        setVgrow(region, Priority.NEVER);
+        region.setPrefHeight(NODE_HEIGHT);
+        region.setMinSize(region.getPrefWidth(), region.getPrefHeight());
+    }
 
     private TextField getTextProperty(StringProperty text) {
         TextField textField = new TextField();

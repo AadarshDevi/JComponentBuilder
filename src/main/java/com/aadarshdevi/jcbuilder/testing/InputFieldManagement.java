@@ -82,10 +82,10 @@ public class InputFieldManagement extends GridPane {
     public GridPane getSizeSpinner(DoubleProperty widthProperty, DoubleProperty heightProperty) {
         GridPane gridPane = new GridPane(0, 0);
         gridPane.setPrefWidth(getPrefWidth() * 2 / 5);
-        Spinner<Double> widthSpinner;
-        Spinner<Double> heightSpinner;
-        widthSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, widthProperty.getValue(), 1);
-        widthSpinner.setPrefHeight(NODE_HEIGHT);
+        setSize(gridPane);
+
+        Spinner<Double> widthSpinner = new Spinner<Double>(Double.MIN_VALUE, Double.MAX_VALUE, widthProperty.getValue(), 1);
+        setSize(widthSpinner);
         widthSpinner.setEditable(true);
         widthProperty.bind(
                 Bindings.createDoubleBinding(

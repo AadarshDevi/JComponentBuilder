@@ -1,34 +1,28 @@
 package com.aadarshdevi.jcbuilder.testing;
 
+import com.aadarshdevi.jcbuilder.testing.helper.HelperUI;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.StringProperty;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Paint;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 
-public class InputFieldManagement extends GridPane implements InputManager {
+//abstract
+public class Inspector extends GridPane implements InspectorInterface {
 
-    private static final double NODE_HEIGHT = 30;
+    protected Mode mode = Mode.SIMPLE;
 
-    public InputFieldManagement() {
-        setBackground(new Background(new BackgroundFill(
-                Paint.valueOf("#ddb56e"),
-                new CornerRadii(0),
-                new Insets(0)
-        )));
-        setVgap(5);
-        prefWidth(Double.MAX_VALUE);
-        setAlignment(Pos.CENTER_LEFT);
-        setPadding(new Insets(10));
-        setMaxWidth(Double.MAX_VALUE);
-        setMinSize(getPrefWidth(), getPrefHeight());
+    public Inspector() {
+    }
+
+    public Inspector(Mode mode) {
+        this.mode = mode;
     }
 
     @Override
@@ -48,7 +42,6 @@ public class InputFieldManagement extends GridPane implements InputManager {
         return textField;
     }
 
-    @Override
     public void setNode(Node node) {
         getChildren().removeAll(getChildren());
 
@@ -68,15 +61,11 @@ public class InputFieldManagement extends GridPane implements InputManager {
 
     @Override
     public Label getLabel(String header) {
-        Label label = new Label(header);
-        label.setText(header);
-        label.setPrefWidth(getPrefWidth() * 3 / 5);
-        label.setPrefHeight(NODE_HEIGHT);
-        label.setMaxWidth(Double.MAX_VALUE);
-        label.setMinWidth(getPrefWidth() * 2 / 5);
+        Label label = HelperUI.label(header, getPrefWidth());
         setHgrow(label, Priority.ALWAYS);
         return label;
     }
+
 
     @Override
     public GridPane getSizeSpinner(DoubleProperty widthProperty, DoubleProperty heightProperty) {
@@ -111,5 +100,23 @@ public class InputFieldManagement extends GridPane implements InputManager {
         setSize(spinner);
         spinner.setEditable(true);
         return spinner;
+    }
+
+    public void update() {
+    }
+
+    public void transfer() {
+
+    }
+
+    private void basicMode() {
+    }
+
+    private void advancedMode() {
+    }
+
+    public enum Mode {
+        SIMPLE,
+        ADVANCED
     }
 }

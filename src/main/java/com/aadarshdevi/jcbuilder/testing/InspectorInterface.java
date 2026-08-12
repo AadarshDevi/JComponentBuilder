@@ -9,7 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 
-public interface InputManager {
+public interface InspectorInterface {
+
+    double NODE_HEIGHT = 30;
 
     /**
      * sets the Input Field to the required size
